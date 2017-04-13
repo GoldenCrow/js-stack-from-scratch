@@ -15,14 +15,12 @@ const initialState = Immutable.fromJS({
   messageAsync: 'Initial reducer message for async call',
 })
 
-const helloReducer = (
-  state: Immut = initialState,
-  action: { type: string, payload: any }) => {
+const helloReducer = (state: Immut = initialState, action: { type: string, payload: any }) => {
   switch (action.type) {
     case SAY_HELLO:
       return state.set('message', action.payload)
     case SAY_HELLO_ASYNC_REQUEST:
-      return state.set('messageAsync', 'Loading')
+      return state.set('messageAsync', 'Loading...')
     case SAY_HELLO_ASYNC_SUCCESS:
       return state.set('messageAsync', action.payload)
     case SAY_HELLO_ASYNC_FAILURE:
